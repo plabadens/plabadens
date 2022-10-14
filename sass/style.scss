@@ -1,0 +1,107 @@
+@import '_mixins';
+@import 'latex';
+
+/********** Fonts **********/
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('./fonts/LibertinusSerif-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('./fonts/LibertinusSerif-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('./fonts/LibertinusSerif-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url('./fonts/LibertinusSerif-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/LibertinusSerif-Semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/LibertinusSerif-SemiboldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('./fonts/LibertinusSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus Sans';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('./fonts/LibertinusSans-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('./fonts/LibertinusSans-Bold.woff2') format('woff2');
+}
+
+/********** Variables **********/
+
+$body-font: 'Libertinus Serif';
+$heading-font: 'Libertinus Sans';
+
+/********** Declarations **********/
+
+body {
+  font-family: $body-font, Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+@include headings {
+  font-family: $heading-font, Arial, Helvetica, sans-serif;
+}
+
+.author {
+  font-family: $heading-font;
+  font-variant-caps: normal;
+}
+
+p {
+  @include hyphenate;
+}
+
+div.copyright {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 85%;
+  filter: opacity(50%);
+}

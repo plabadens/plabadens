@@ -1,0 +1,23 @@
+@mixin headings {
+  h1, h2, h3, h4, h5, h6 {
+    @content;
+  }
+}
+
+@mixin hyphenate($hyphens: auto, $chars: 6 3 2, $lines: 2) {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-hyphens: $hyphens;
+  -webkit-hyphens: $hyphens;
+  hyphens: $hyphens;
+
+  -moz-hyphenate-limit-chars: $chars;     /* not yet supported */ 
+  -webkit-hyphenate-limit-chars: $chars;  /* not yet supported */ 
+  -ms-hyphenate-limit-chars: $chars; 
+  hyphenate-limit-chars: $chars;
+
+  -ms-hyphenate-limit-lines: $lines;
+  -webkit-hyphenate-limit-lines: $lines; 
+  hyphenate-limit-lines: $lines;
+};
